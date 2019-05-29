@@ -1,0 +1,1826 @@
+
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                           Beamer options                            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%
+%  handout  %
+%%%%%%%%%%%%%
+% \documentclass[handout]{beamer}
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{6 on 1}[a4paper,border shrink=5mm]
+
+
+%%%%%%%%%%%%%%%%%
+%  only slides  %
+%%%%%%%%%%%%%%%%%
+% \documentclass[notes=hide]{beamer}
+
+%%%%%%%%%%%%%%%%%%%%%
+%  show only notes  %
+%%%%%%%%%%%%%%%%%%%%%
+%\documentclass[notes=only]{beamer}
+
+%%%%%%%%%%%%%%%%
+%  with notes  %
+%%%%%%%%%%%%%%%%
+\documentclass{beamer}
+\setbeameroption{show notes}
+\usepackage{pgfpages}
+\setbeameroption{show notes on second screen}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          Color definition                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{colortbl,xcolor}
+
+\definecolor{fdbgblue}{rgb}{0.25,0.25,0.95} % use structure theme to change
+\definecolor{fdbggreen}{rgb}{0.25,0.65,0.25} % use structure theme to change
+\definecolor{fdbgred}{rgb}{0.75,0.25,0.25} % use structure theme to change
+
+
+\definecolor{colorzero}{rgb}{0, 0, 0}
+\definecolor{colorone}{rgb}{0, 0, 0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                      define color hue_pal()(n)                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{twocolorone}{HTML}{F8766D}
+\definecolor{twocolortwo}{HTML}{00BFC4}
+
+\definecolor{threecolorone}{HTML}{F8766D}
+\definecolor{threecolortwo}{HTML}{00BA38}
+\definecolor{threecolorthree}{HTML}{619CFF}
+
+\definecolor{fourcolorone}{HTML}{F8766D}
+\definecolor{fourcolortwo}{HTML}{7CAE00}
+\definecolor{fourcolorthree}{HTML}{00BFC4}
+\definecolor{fourcolorfour}{HTML}{C77CFF}
+
+\definecolor{fivecolorone}{HTML}{F8766D}
+\definecolor{fivecolortwo}{HTML}{A3A500}
+\definecolor{fivecolorthree}{HTML}{00BF7D}
+\definecolor{fivecolorfour}{HTML}{00B0F6}
+\definecolor{fivecolorfive}{HTML}{E76BF3}
+
+\definecolor{sixcolorone}{HTML}{F8766D}
+\definecolor{sixcolortwo}{HTML}{B79F00}
+\definecolor{sixcolorthree}{HTML}{00BA38}
+\definecolor{sixcolorfour}{HTML}{00BFC4}
+\definecolor{sixcolorfive}{HTML}{619CFF}
+\definecolor{sixcolorsix}{HTML}{F564E3}
+
+\definecolor{sevencolorone}{HTML}{F8766D}
+\definecolor{sevencolortwo}{HTML}{C49A00}
+\definecolor{sevencolorthree}{HTML}{53B400}
+\definecolor{sevencolorfour}{HTML}{00C094}
+\definecolor{sevencolorfive}{HTML}{00B6EB}
+\definecolor{sevencolorsix}{HTML}{A58AFF}
+\definecolor{sevencolorseven}{HTML}{FB61D7}
+
+\definecolor{eightcolorone}{HTML}{F8766D}
+\definecolor{eightcolortwo}{HTML}{CD9600}
+\definecolor{eightcolorthree}{HTML}{7CAE00}
+\definecolor{eightcolorfour}{HTML}{00BE67}
+\definecolor{eightcolorfive}{HTML}{00BFC4}
+\definecolor{eightcolorsix}{HTML}{00A9FF}
+\definecolor{eightcolorseven}{HTML}{C77CFF}
+\definecolor{eightcoloreight}{HTML}{FF61CC}
+
+\definecolor{ninecolorone}{HTML}{F8766D}
+\definecolor{ninecolortwo}{HTML}{D39200}
+\definecolor{ninecolorthree}{HTML}{93AA00}
+\definecolor{ninecolorfour}{HTML}{00BA38}
+\definecolor{ninecolorfive}{HTML}{00C19F}
+\definecolor{ninecolorsix}{HTML}{00B9E3}
+\definecolor{ninecolorseven}{HTML}{619CFF}
+\definecolor{ninecoloreight}{HTML}{DB72FB}
+\definecolor{ninecolornine}{HTML}{FF61C3}
+
+\definecolor{tencolorone}{HTML}{F8766D}
+\definecolor{tencolortwo}{HTML}{D89000}
+\definecolor{tencolorthree}{HTML}{A3A500}
+\definecolor{tencolorfour}{HTML}{39B600}
+\definecolor{tencolorfive}{HTML}{00BF7D}
+\definecolor{tencolorsix}{HTML}{00BFC4}
+\definecolor{tencolorseven}{HTML}{00B0F6}
+\definecolor{tencoloreight}{HTML}{9590FF}
+\definecolor{tencolornine}{HTML}{E76BF3}
+\definecolor{tencolorten}{HTML}{FF62BC}
+
+\definecolor{thirteencolorone}{HTML}{F8766D}
+\definecolor{thirteencolortwo}{HTML}{E18A00}
+\definecolor{thirteencolorthree}{HTML}{BE9C00}
+\definecolor{thirteencolorfour}{HTML}{8CAB00}
+\definecolor{thirteencolorfive}{HTML}{24B700}
+\definecolor{thirteencolorsix}{HTML}{00BE70}
+\definecolor{thirteencolorseven}{HTML}{00C1AB}
+\definecolor{thirteencoloreight}{HTML}{00BBDA}
+\definecolor{thirteencolornine}{HTML}{00ACFC}
+\definecolor{thirteencolorten}{HTML}{8B93FF}
+\definecolor{thirteencoloreleven}{HTML}{D575FE}
+\definecolor{thirteencolortwelve}{HTML}{F962DD}
+\definecolor{thirteencolorthirteen}{HTML}{FF65AC}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       Beamer theme definition                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usetheme{progressbar}
+\addtobeamertemplate{block begin}{%
+  \setlength{\textwidth}{\textwidth}%
+}{}
+
+\makeatletter
+\def\beamer@framenotesbegin{% at beginning of slide
+     \usebeamercolor[fg]{normal text}
+      \gdef\beamer@noteitems{}%
+      \gdef\beamer@notes{}%
+}
+\makeatother
+
+%%%%%%%%%%%%%%%
+%  color box  %
+%%%%%%%%%%%%%%%
+
+\setbeamercolor*{fdblock}{bg=fdbgblue,fg=white}
+\setbeamercolor*{fdexample}{bg=fdbggreen,fg=white}
+\setbeamercolor*{fdalert}{bg=fdbgred,fg=white}
+
+\newenvironment{blocktext}
+{\begin{beamercolorbox}[center]{block body}}
+{\end{beamercolorbox}}
+\newenvironment{blocktexttitle}
+{\begin{beamercolorbox}[center]{block title}}
+{\end{beamercolorbox}}
+\newenvironment{blocktextalerted}
+{\begin{beamercolorbox}[center]{block body alerted}}
+{\end{beamercolorbox}}
+\newenvironment{blocktextalertedtitle}
+{\begin{beamercolorbox}[center]{block title alerted}}
+{\end{beamercolorbox}}
+\newenvironment{blocktextexample}
+{\begin{beamercolorbox}[center]{block body example}}
+{\end{beamercolorbox}}
+\newenvironment{blocktextexampletitle}
+{\begin{beamercolorbox}[center]{block title example}}
+{\end{beamercolorbox}}
+
+\newenvironment{blocktextsep}
+{\begin{beamercolorbox}[center,sep=0.5em]{block body}}
+{\end{beamercolorbox}}
+\newenvironment{blocktexttitlesep}
+{\begin{beamercolorbox}[center,sep=0.5em]{block title}}
+{\end{beamercolorbox}}
+\newenvironment{blocktextalertedsep}
+{\begin{beamercolorbox}[center,sep=0.5em]{block body alerted}}
+{\end{beamercolorbox}}
+\newenvironment{blocktextalertedtitlesep}
+{\begin{beamercolorbox}[center,sep=0.5em]{block title alerted}}
+{\end{beamercolorbox}}
+\newenvironment{blocktextexamplesep}
+{\begin{beamercolorbox}[center,sep=0.5em]{block body example}}
+{\end{beamercolorbox}}
+\newenvironment{blocktextexampletitlesep}
+{\begin{beamercolorbox}[center,sep=0.5em]{block title example}}
+{\end{beamercolorbox}}
+
+\newenvironment{blocktextnc}
+{\begin{beamercolorbox}{block body}}
+{\end{beamercolorbox}}
+\newenvironment{blocktexttitlenc}
+{\begin{beamercolorbox}{block title}}
+{\end{beamercolorbox}}
+\newenvironment{blocktextalertednc}
+{\begin{beamercolorbox}{block body alerted}}
+{\end{beamercolorbox}}
+\newenvironment{blocktextalertedtitlenc}
+{\begin{beamercolorbox}{block title alerted}}
+{\end{beamercolorbox}}
+\newenvironment{blocktextexamplenc}
+{\begin{beamercolorbox}{block body example}}
+{\end{beamercolorbox}}
+\newenvironment{blocktextexampletitlenc}
+{\begin{beamercolorbox}{block title example}}
+{\end{beamercolorbox}}
+
+\newenvironment{blocktextsepnc}
+{\begin{beamercolorbox}[sep=0.5em]{block body}}
+{\end{beamercolorbox}}
+\newenvironment{blocktexttitlesepnc}
+{\begin{beamercolorbox}[sep=0.5em]{block title}}
+{\end{beamercolorbox}}
+\newenvironment{blocktextalertedsepnc}
+{\begin{beamercolorbox}[sep=0.5em]{block body alerted}}
+{\end{beamercolorbox}}
+\newenvironment{blocktextalertedtitlesepnc}
+{\begin{beamercolorbox}[sep=0.5em]{block title alerted}}
+{\end{beamercolorbox}}
+\newenvironment{blocktextexamplesepnc}
+{\begin{beamercolorbox}[sep=0.5em]{block body example}}
+{\end{beamercolorbox}}
+\newenvironment{blocktextexampletitlesepnc}
+{\begin{beamercolorbox}[sep=0.5em]{block title example}}
+{\end{beamercolorbox}}
+
+\newenvironment{fdtblock}
+{\begin{beamercolorbox}[center,sep=0.5em]{fdblock}\heiti}
+{\end{beamercolorbox}}
+\newenvironment{fdtexample}
+{\begin{beamercolorbox}[center,sep=0.5em]{fdexample}\heiti}
+{\end{beamercolorbox}}
+\newenvironment{fdtalert}
+{\begin{beamercolorbox}[center,sep=0.5em]{fdalert}\heiti}
+{\end{beamercolorbox}}
+
+\makeatletter
+% The following two commands should only be given between frames
+% Remove the equation counter from the list of counters that are reset after
+% each overlay.
+\def\donotresetequations{{%
+    \let\@@elt\relax
+    \def\@elt##1{%
+        \expandafter\ifx\csname ##1\endcsname\c@equation%
+        \else%
+            \@@elt {##1}%
+        \fi%
+    }%
+    \edef\beamer@overlaycounterresets{\beamer@overlaycounterresets}%
+    \let\@elt\relax%
+    \def\@@elt{\@elt}%
+    \xdef\beamer@overlaycounterresets{\beamer@overlaycounterresets}%
+}}
+% Add the equation counter from the list of counters that are reset after
+% each overlay.
+\def\resetequations{\resetcounteronoverlays{equation}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          The other package                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[absolute,overlay]{textpos}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{yfonts}
+\usepackage{wasysym}
+\usepackage{bbm}
+\usepackage{siunitx}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                            Chinese font                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[UTF8,fontset=windowsnew]{ctex}
+\usefonttheme[onlymath]{serif}
+\setCJKfamilyfont{hei}{SimHei}
+\newcommand{\hei}{\CJKfamily{hei}}% 黑体   (Windows自带simhei.ttf)
+\setCJKfamilyfont{siyuan}{SourceHanSerifCN-Regular}
+\newcommand{\sy}{\CJKfamily{siyuan}}
+\defaultfontfeatures{Mapping=tex-text}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+\setCJKmainfont[BoldFont=SourceHanSerifCN-Bold]{SimSun}
+\setCJKsansfont[BoldFont=SourceHanSerifCN-Bold]{KaiTi}
+\setCJKmonofont[BoldFont=SourceHanSerifCN-Bold]{SimSun}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                         The other packages                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{hyperref}
+\hypersetup{xetex,bookmarksnumbered=true,bookmarksopen=true,pdfborder=1,breaklinks,
+colorlinks, linkcolor=, urlcolor=structure.fg}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{mathtools} %数学公式中case情况
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amsmath,amssymb, mathrsfs, bm}
+\usepackage{minted}%code highlighting
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                TIKZ                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{tikz}% tikz做图
+\usepackage{pgfplots}
+\pgfplotsset{width=7cm,compat=1.16}
+\pgfplotsset{
+tick label style={font=\small},
+label style={font=\small},
+legend style={font=\small},
+small/.style={
+width=6.5cm,
+height=,
+tick label style={font=\small},
+label style={font=\small},
+max space between ticks=25,
+},
+}
+
+\usepackage{flowchart}
+
+
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{intersections}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usetikzlibrary{math}
+\usetikzlibrary{snakes}
+
+\tikzset{
+connect/.style args={(#1) to (#2) over (#3) to (#4) by (#5) with name (#6) and (#7)}{
+  insert path={
+    \pgfextra{
+      \pgfinterruptpath
+      \path [unlinktype1,name path=a] (#6) -- (#7);
+      \path [name path=b] (#3) -- (#4);
+      \path [name intersections={of=a and b,by=inter}];
+      \endpgfinterruptpath
+    }
+    let \p1=($(#1)-(inter)$), \n1={veclen(\x1,\y1)},
+    \n2={atan2(\y1,\x1)}, \n3={abs(#5)}, \n4={#5>0 ?180:-180}  in (#6) -- ($(#1)!\n1-\n3!(inter)$)
+    arc (\n2:\n2+\n4:\n3) -- (#7)
+  }
+},
+}
+
+
+\tikzstyle{nodetype1pre}= [circle, fill=black!60]
+\tikzstyle{nodetype1}= [circle, fill=structure.fg!30]
+\tikzstyle{unnodetype1}= [circle, fill=black!60]
+\tikzstyle{linktype1pre}= [-latex]
+\tikzstyle{linktype1}= [-latex, draw=purple, line width=1.5pt]
+\tikzstyle{dilinktype1pre}= [-]
+\tikzstyle{dilinktype1}= [-, draw=purple, line width=1.5pt]
+\tikzstyle{unlinktype1}= [-latex]
+\tikzstyle{linktype2}= [-latex, snake=snake,line after snake=4mm, draw=structure.fg, line width=1.5pt]
+\tikzstyle{every picture}+=[remember picture]
+\tikzstyle{nodeisprior}= [circle, fill=structure.fg!25!white, draw=black]
+\tikzstyle{nodeislatent}= [circle, fill=white, draw=black]
+
+\tikzstyle{stickget}= [draw=twocolorone]
+\tikzstyle{stickremain}= [draw=black]
+\tikzstyle{sticklink}= [->,thick,twocolortwo]
+\tikzstyle{sticknodeget}=[pos=.5,twocolorone]
+\tikzstyle{sticknoderemain}=[pos=.5]
+\tikzstyle{nodeongoing1}= [white!20!black]
+\tikzstyle{nodeongoing2}= [white!40!black]
+\tikzstyle{nodeongoing3}= [white!60!black]
+\tikzstyle{stickongoing1}= [draw=white!20!black]
+\tikzstyle{stickongoing2}= [draw=white!40!black]
+\tikzstyle{stickongoing3}= [draw=white!60!black]
+
+\usetikzlibrary[topaths,mindmap,backgrounds]
+\usetikzlibrary{chains,decorations.pathmorphing,positioning,fit}
+\usetikzlibrary{decorations.shapes,calc,}
+\usetikzlibrary{decorations.text,matrix}
+\usetikzlibrary{arrows,shapes.geometric,shapes.symbols,scopes}
+% A counter, since TikZ is not clever enough (yet) to handle
+% arbitrary angle systems.
+\newcount\mycount
+\tikzset{
+    invisible/.style={opacity=0},
+    visible on/.style={alt=#1{}{invisible}},
+    alt/.code args={<#1>#2#3}{%
+    \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}}
+  },
+}
+
+\tikzset{
+  orp/.style={
+    overlay,
+    remember picture,
+  },
+}
+\newcommand<>\fadetitle[2][]{%
+    \begin{tikzpicture}
+      [
+        orp,
+        fade title fill/.style={
+          fill=progressbar@bgblue,
+          opacity=0.6,
+	},shift={(current page.center)},
+        #1
+      ]
+      \path[fade title fill] (current page.south west) +(-1cm, -1cm) rectangle ($ (current page.north east) + (2cm, 2cm) $);
+      %\node[above,anchor=mid] at (-0.05,-0.05) {\Large\bf\color{white}{#2}};
+      %\node[above,anchor=mid] at (-0.05,0.05) {\Large\bf\color{white}{#2}};
+      %\node[above,anchor=mid] at (0.05,-0.05) {\Large\bf\color{white}{#2}};
+      %\node[above,anchor=mid] at (0.05,0.05) {\Large\bf\color{white}{#2}};
+      \node[above,anchor=mid,align=center,text centered,minimum height = \textheight,text width=\linewidth] at (current page) {{#2}};
+    \end{tikzpicture}%
+}
+
+\tikzstyle{maternal}= [fourcolorone,line width=1pt]
+\tikzstyle{paternal}= [fourcolortwo,line width=1pt]
+\tikzstyle{variant}= [fourcolorthree,line width=1pt]
+\tikzstyle{reference}= [gray,line width=1pt]
+\tikzstyle{aallele}= [colorzero]
+\tikzstyle{ballele}= [fourcolorthree]
+\tikzstyle{refseg}= [colorzero,draw=colorzero, opacity=0.2]
+\tikzstyle{mseg}= [fourcolorone,draw=fourcolorone, opacity=0.5]
+\tikzstyle{pseg}= [fourcolortwo,draw=fourcolortwo, opacity=0.5]
+\tikzstyle{vseg}= [fourcolorthree,draw=fourcolorthree, opacity=0.5]
+\tikzstyle{bncell}= [draw=colorzero,opacity=0.5,line width=1pt, rounded corners=1pt]
+\tikzstyle{btcell}= [draw=fourcolorfour, line width=1pt, rounded corners=1pt]
+\tikzstyle{tncell}= [colorzero,opacity=0.9]
+\tikzstyle{ttcell}= [fourcolorfour]
+\tikzstyle{tscell}= [colorzero]
+\tikzstyle{refcell}= [colorzero]
+\tikzstyle{evolve}= [->,draw=fourcolorfour,line width=1pt]
+\tikzstyle{fakeevolve}= [->,draw=colorzero,opacity=0.3,line width=1pt]
+\tikzstyle{refline}= [dashed,draw=colorzero,line width=1pt]
+\tikzstyle{tnline}= [dashed,draw=colorzero,opacity=0.3,line width=1pt]
+
+\newcommand{\gseg}[9]{%
+	\pgfmathsetmacro{\sstartx}{#1}
+	\pgfmathsetmacro{\slengx}{#2}
+	\pgfmathsetmacro{\sy}{#3}
+	\pgfmathsetmacro{\sdy}{#4}
+	\pgfmathsetmacro{\sdx}{#5}
+	\pgfmathsetmacro{\sdxh}{#7}
+	\pgfmathsetmacro{\sdxt}{#8}
+	\fill[#6](\sstartx,\sy)--(\sstartx-\sdx,\sy+\sdy)--
+	(\slengx+\sstartx+1.5-\sdx,\sy+\sdy)--(\slengx+\sstartx+1.5,\sy)--
+	(\slengx+\sstartx+1.5-\sdx,\sy-\sdy)--(\sstartx-\sdx,\sy-\sdy)--cycle;
+	\draw[#9] (\sstartx-\sdxh,\sy) -- (\sstartx, \sy);
+	\draw[#9] (\slengx+\sstartx+1.5, \sy) -- (\slengx+\sstartx+1.5+\sdxt,\sy);
+}
+\newcommand{\gsegr}[9]{%
+	\pgfmathsetmacro{\sstartx}{#1}
+	\pgfmathsetmacro{\slengx}{#2}
+	\pgfmathsetmacro{\sy}{#3}
+	\pgfmathsetmacro{\sdy}{#4}
+	\pgfmathsetmacro{\sdx}{#5}
+	\pgfmathsetmacro{\sdxh}{#7}
+	\pgfmathsetmacro{\sdxt}{#8}
+	\fill[#6](\sstartx-0.5,\sy)--(\sstartx+\sdx-0.5,\sy+\sdy)--
+	(\slengx+\sstartx+1.5+\sdx-0.5,\sy+\sdy)--(\slengx+\sstartx+1.5-0.5,\sy)--
+	(\slengx+\sstartx+1.5+\sdx-0.5,\sy-\sdy)--(\sstartx+\sdx-0.5,\sy-\sdy)--cycle;
+	\draw[#9] (\sstartx-\sdxh-0.5,\sy) -- (\sstartx-0.5, \sy);
+	\draw[#9] (\slengx+\sstartx+1.5-0.5, \sy) -- (\slengx+\sstartx+1.5+\sdxt-0.5,\sy);
+}
+
+\newcommand{\rcell}[2]{%
+	\pgfmathsetmacro{\x}{#1}
+	\pgfmathsetmacro{\y}{#2}
+	%\node at (\x+10, \y) {Reference};
+	\draw (\x+1,\y) node[aallele]{A};
+	\draw (\x+2,\y) node[aallele]{C};
+	\draw (\x+3,\y) node[aallele]{T};
+	\draw (\x+4,\y) node[aallele]{C};
+	\gseg{\x}{4}{\y}{0.2}{0.5}{refseg}{1.5}{1}{reference};
+}
+
+\newcommand{\ncell}[2]{%
+	\pgfmathsetmacro{\x}{#1}
+	\pgfmathsetmacro{\y}{#2}
+	%\node [maternal] at (\x+8, \y) {M};
+	%\node [paternal] at (\x+8, \y-0.5) {P};
+	\draw[bncell](\x-2,\y+0.5)--(\x+7,\y+0.5)--
+	(\x+7,\y-1)--(\x-2,\y-1)--cycle;
+	\draw (\x+1,\y) node[aallele]{A};
+	\draw (\x+2,\y) node[ballele]{G};
+	\draw (\x+3,\y) node[aallele]{T};
+	\draw (\x+4,\y) node[aallele]{C};
+	\gseg{\x}{4}{\y}{0.2}{0.5}{mseg}{1.5}{1}{maternal};
+	\draw (\x+1,\y-0.5) node[ballele]{T};
+	\draw (\x+2,\y-0.5) node[aallele]{C};
+	\draw (\x+3,\y-0.5) node[aallele]{T};
+	\draw (\x+4,\y-0.5) node[ballele]{A};
+	\gseg{\x}{4}{\y-0.5}{0.2}{0.5}{pseg}{1.5}{1}{paternal};
+}
+
+\newcommand{\tcellone}[2]{%
+	\pgfmathsetmacro{\x}{#1}
+	\pgfmathsetmacro{\y}{#2}
+	%\node [maternal] at (\x+8, \y) {M};
+	%\node [maternal] at (\x+8, \y-0.5) {M};
+	%\node [paternal] at (\x+8, \y-1) {P};
+	\draw[btcell](\x-2,\y+0.5)--(\x+7,\y+0.5)--
+	(\x+7,\y-1.5)--(\x-2,\y-1.5)--cycle;
+	\draw (\x+1,\y) node[aallele]{A};
+	\draw (\x+2,\y) node[ballele]{G};
+	\draw (\x+3,\y) node[aallele]{T};
+	\draw (\x+4,\y) node[aallele]{C};
+	\gseg{\x}{4}{\y}{0.2}{0.5}{mseg}{1.5}{1}{maternal};
+	\draw (\x+1,\y-0.5) node[aallele]{A};
+	\draw (\x+2,\y-0.5) node[ballele]{G};
+	\draw (\x+3,\y-0.5) node[aallele]{T};
+	\draw (\x+4,\y-0.5) node[aallele]{C};
+	\gseg{\x}{4}{\y-0.5}{0.2}{0.5}{mseg}{1.5}{1}{maternal};
+	\draw (\x+1,\y-1) node[ballele]{T};
+	\draw (\x+2,\y-1) node[aallele]{C};
+	\draw (\x+3,\y-1) node[aallele]{T};
+	\draw (\x+4,\y-1) node[ballele]{A};
+	\gseg{\x}{4}{\y-1}{0.2}{0.5}{pseg}{1.5}{1}{paternal};
+}
+
+\newcommand{\tcellthree}[2]{%
+	\pgfmathsetmacro{\x}{#1}
+	\pgfmathsetmacro{\y}{#2}
+	\draw[btcell](\x-2,\y+0.5)--(\x+11,\y+0.5)--
+	(\x+11,\y-1)--(\x-2,\y-1)--cycle;
+	\draw (\x+1,\y) node[aallele]{A};
+	\draw (\x+2,\y) node[ballele]{G};
+	\gseg{\x}{2}{\y}{0.2}{0.5}{mseg}{1.5}{0}{maternal};
+	\gseg{\x+4}{0}{\y}{0.2}{0.5}{vseg}{0.5}{0.5}{variant};
+	\draw (\x+7,\y) node[aallele]{T};
+	\draw (\x+8,\y) node[aallele]{C};
+	\gseg{\x+6}{2}{\y}{0.2}{0.5}{mseg}{0}{1}{maternal};
+	\draw (\x+1,\y-0.5) node[ballele]{T};
+	\draw (\x+2,\y-0.5) node[aallele]{C};
+	\draw (\x+3,\y-0.5) node[aallele]{T};
+	\draw (\x+4,\y-0.5) node[ballele]{A};
+	\gseg{\x}{4}{\y-0.5}{0.2}{0.5}{pseg}{1.5}{1}{paternal};
+}
+
+\newcommand{\tcellfour}[2]{%
+	\pgfmathsetmacro{\x}{#1}
+	\pgfmathsetmacro{\y}{#2}
+	%\node [maternal] at (\x+18, \y) {M};
+	%\node [paternal] at (\x+18, \y-0.5) {P};
+	\draw[btcell](\x-2,\y+0.5)--(\x+15,\y+0.5)--
+	(\x+15,\y-1)--(\x-2,\y-1)--cycle;
+	\draw (\x+1,\y) node[aallele]{A};
+	\draw (\x+2,\y) node[ballele]{G};
+	\gseg{\x}{2}{\y}{0.2}{0.5}{mseg}{1.5}{0}{maternal};
+	\gseg{\x+4}{0}{\y}{0.2}{0.5}{vseg}{0.5}{0.5}{variant};
+	\draw (\x+7,\y) node[aallele]{T};
+	\gseg{\x+6}{1}{\y}{0.2}{0.5}{mseg}{0}{0}{maternal};
+	\gseg{\x+9}{0}{\y}{0.2}{0.5}{vseg}{0.5}{0.5}{variant};
+	\draw (\x+12,\y) node[aallele]{C};
+	\gseg{\x+11}{1}{\y}{0.2}{0.5}{mseg}{0}{1}{maternal};
+	\draw (\x+1,\y-0.5) node[ballele]{T};
+	\draw (\x+2,\y-0.5) node[aallele]{C};
+	\draw (\x+3,\y-0.5) node[aallele]{T};
+	\draw (\x+4,\y-0.5) node[ballele]{A};
+	\gseg{\x}{4}{\y-0.5}{0.2}{0.5}{pseg}{1.5}{1}{paternal};
+}
+
+\newcommand{\tcelltwo}[2]{%
+	\pgfmathsetmacro{\x}{#1}
+	\pgfmathsetmacro{\y}{#2}
+	%\node [maternal] at (\x+8, \y) {M};
+	%\node [maternal] at (\x+8, \y-0.5) {M};
+	%\node [paternal] at (\x+8, \y-1) {P};
+	\draw[btcell](\x-2,\y+0.5)--(\x+7,\y+0.5)--
+	(\x+7,\y-1.5)--(\x-2,\y-1.5)--cycle;
+	\draw (\x+1,\y)  node[aallele]{A};
+	\draw (\x+2,\y)  node[ballele]{G};
+	\draw (\x+3,\y)  node[aallele]{T};
+	\draw (\x+4,\y)  node[aallele]{C};
+	\gseg{\x}{4}{\y}{0.2}{0.5}{mseg}{1.5}{1}{maternal};
+	\draw (\x+1,\y-0.5) node[aallele]{A};
+	\draw (\x+2,\y-0.5) node[ballele]{G};
+	\draw (\x+3,\y-0.5) node[aallele]{T};
+	\draw (\x+4,\y-0.5) node[ballele]{G};
+	\gseg{\x}{4}{\y-0.5}{0.2}{0.5}{mseg}{1.5}{1}{maternal};
+	\draw (\x+1,\y-1) node[ballele]{T};
+	\draw (\x+2,\y-1) node[aallele]{C};
+	\draw (\x+3,\y-1) node[aallele]{T};
+	\draw (\x+4,\y-1) node[ballele]{A};
+	\gseg{\x}{4}{\y-1}{0.2}{0.5}{pseg}{1.5}{1}{paternal};
+}
+
+
+\newcommand{\tcellfive}[2]{%
+	\pgfmathsetmacro{\x}{#1}
+	\pgfmathsetmacro{\y}{#2}
+	%\node [maternal] at (\x+8, \y) {M};
+	%\node [maternal] at (\x+8, \y-0.5) {M};
+	%\node [paternal] at (\x+8, \y-1) {P};
+	\draw[btcell](\x-2,\y+0.5)--(\x+9.5,\y+0.5)--
+	(\x+9.5,\y-1.5)--(\x-2,\y-1.5)--cycle;
+	\draw (\x+1,\y) node[aallele]{A};
+	\draw (\x+2,\y) node[ballele]{G};
+	\draw (\x+3,\y) node[aallele]{T};
+	\draw (\x+4,\y) node[aallele]{C};
+	\gseg{\x}{4}{\y}{0.2}{0.5}{mseg}{1.5}{1}{maternal};
+	\draw (\x+1,\y-0.5) node[aallele]{A};
+	\draw (\x+2,\y-0.5) node[ballele]{G};
+	\draw (\x+3,\y-0.5) node[aallele]{T};
+	\draw (\x+4,\y-0.5) node[aallele]{C};
+	\gseg{\x}{4}{\y-0.5}{0.2}{0.5}{mseg}{1.5}{1}{maternal};
+	\draw (\x+1,\y-1) node[ballele]{T};
+	\gseg{\x}{1}{\y-1}{0.2}{0.5}{pseg}{1.5}{0}{paternal};
+	\draw (\x+4.5,\y-1) node[ballele]{A};
+	\draw (\x+5.5,\y-1) node[aallele]{T};
+	\draw (\x+6.5,\y-1) node[aallele]{C};
+	\gsegr{\x+3.5}{3}{\y-1}{0.2}{0.5}{pseg}{0.5}{1.5}{paternal};
+}
+
+
+
+\newcommand{\tgseg}[7]{%画出箭头状边框
+	\pgfmathsetmacro{\sstartx}{#1}%中心左x
+	\pgfmathsetmacro{\sy}{#2}%中心左y
+	\pgfmathsetmacro{\slengx}{#3}%长度
+	\pgfmathsetmacro{\sdx}{#4}%X轴箭头向后偏转
+	\pgfmathsetmacro{\sdy}{#5}%Y轴箭头向上偏转
+	\fill[#6, path picture={\node [opacity=1] at (path picture bounding box.center) {#7};}](\sstartx,\sy)--(\sstartx-\sdx,\sy+\sdy)--(\slengx+\sstartx-\sdx,\sy+\sdy)--(\slengx+\sstartx,\sy)--(\slengx+\sstartx-\sdx,\sy-\sdy)--(\sstartx-\sdx,\sy-\sdy)--cycle;
+}
+
+
+
+\newcommand{\tgchrom}[8]{%画出竖直状态的染色体
+	\pgfmathsetmacro{\x}{#1}%底部中心X
+	\pgfmathsetmacro{\y}{#2}%底部中心Y
+	\pgfmathsetmacro{\w}{#3}%宽
+	\pgfmathsetmacro{\ll}{#4}%长臂长
+	\pgfmathsetmacro{\sl}{#5}%短臂长
+	%此处处理圆角
+	\fill[#6](\x,\y)--(\x,\y+\ll)--(\x+\w/4.0,\y+\ll+\w/4.0)--(\x,\y+\ll+\w/2.0)--(\x,\y+\ll+\sl+\w/2.0)..controls +(north:\w/2.0) and +(north:\w/2.0)..(\x+\w,\y+\ll+\sl+\w/2.0)--(\x+\w,\y+\ll+\w/2.0)--(\x+\w-\w/4.0,\y+\ll+\w/4.0)--(\x+\w,\y+\ll)--(\x+\w,\y)..controls +(south:\w/2.0) and +(south:\w/2.0)..cycle;
+	\node[#7] at (\x+\w/2, \y-\w) {#8};
+}
+
+
+\newcommand{\tgchromsplit}[9]{%画出竖直分裂状态的染色体
+	\pgfmathsetmacro{\x}{#1}%底部中心X
+	\pgfmathsetmacro{\y}{#2}%底部中心Y
+	\pgfmathsetmacro{\w}{#3}%宽
+	\pgfmathsetmacro{\ll}{#4}%长臂长
+	\pgfmathsetmacro{\sll}{#5}%下短臂长
+	\pgfmathsetmacro{\slu}{#6}%上短臂长
+	\pgfmathsetmacro{\gap}{#7}%裂隙长
+	%此处处理圆角
+	\fill[#8](\x,\y)--(\x,\y+\ll)--(\x+\w/4.0,\y+\ll+\w/4.0)--(\x,\y+\ll+\w/2.0)--(\x,\y+\ll+\sll+\w/2.0) -- (\x+\w,\y+\ll+\sll+\w/2.0) -- (\x+\w,\y+\ll+\w/2.0) --(\x+\w-\w/4.0,\y+\ll+\w/4.0)--(\x+\w,\y+\ll)--(\x+\w,\y)..controls +(south:\w/2.0) and +(south:\w/2.0)..cycle;
+	\fill[#9](\x,\y+\ll+\sll+\gap+\w/2.0) --(\x,\y+\ll+\sll+\gap+\slu+\w/2.0) ..controls +(north:\w/2.0) and +(north:\w/2.0)..(\x+\w,\y+\ll+\sll+\gap+\slu+\w/2.0)--(\x+\w,\y+\ll+\sll+\gap+\w/2.0)--cycle;
+}
+
+
+
+\tikzstyle{TREESPAWN}= [->,>=latex]
+
+
+
+\tikzstyle{CHROM}= []
+\tikzstyle{TREAD}= [yshift=6,minimum size=6,inner sep=0,regular polygon,regular polygon sides=3,fill=sixcolorfive,draw=sixcolorfive,rotate=180]
+\tikzstyle{NREAD}= [yshift=-6,minimum size=6,inner sep=0,regular polygon,regular polygon sides=3,fill=sixcolorsix,draw=sixcolorsix]
+\newcommand{\drawBAMONE}[2]{%
+	\pgfmathsetmacro{\dx}{#1}
+	\pgfmathsetmacro{\dy}{#2}
+	\draw [CHROM] (0+\dx,0+\dy)-- (8+\dx,0+\dy);
+	\draw
+	(0.1+\dx,0+\dy) node[TREAD]{}
+	(0.6+\dx,0+\dy) node[TREAD]{}
+	(1.1+\dx,0+\dy) node[TREAD]{}
+	(1.5+\dx,0+\dy) node[TREAD]{}
+	(1.8+\dx,0+\dy) node[TREAD]{};
+	\draw
+	(0.2+\dx,0+\dy) node[NREAD]{}
+	(0.7+\dx,0+\dy) node[NREAD]{}
+	(1.3+\dx,0+\dy) node[NREAD]{}
+	(1.6+\dx,0+\dy) node[NREAD]{}
+	(1.9+\dx,0+\dy) node[NREAD]{};
+	\draw
+	(2.6+\dx,0+\dy) node[TREAD]{};
+	\draw
+	(2.5+\dx,0+\dy) node[NREAD]{};
+	\draw
+	(3.2+\dx,0+\dy) node[TREAD]{}
+	(3.4+\dx,0+\dy) node[TREAD]{}
+	(3.3+\dx,0+\dy) node[TREAD]{}
+	(3.6+\dx,0+\dy) node[TREAD]{}
+	(3.8+\dx,0+\dy) node[TREAD]{}
+	(4.4+\dx,0+\dy) node[TREAD]{}
+	(4.7+\dx,0+\dy) node[TREAD]{}
+	(4.9+\dx,0+\dy) node[TREAD]{};
+	\draw
+	(3.1+\dx,0+\dy) node[NREAD]{}
+	(3.3+\dx,0+\dy) node[NREAD]{}
+	(3.5+\dx,0+\dy) node[NREAD]{}
+	(3.7+\dx,0+\dy) node[NREAD]{}
+	(3.9+\dx,0+\dy) node[NREAD]{}
+	(4.3+\dx,0+\dy) node[NREAD]{}
+	(4.6+\dx,0+\dy) node[NREAD]{}
+	(4.8+\dx,0+\dy) node[NREAD]{};
+	\draw
+	(5.1+\dx,0+\dy) node[TREAD]{}
+	(5.4+\dx,0+\dy) node[TREAD]{}
+	(5.7+\dx,0+\dy) node[TREAD]{}
+	(6.0+\dx,0+\dy) node[TREAD]{}
+	(6.3+\dx,0+\dy) node[TREAD]{}
+	(6.6+\dx,0+\dy) node[TREAD]{}
+	(6.9+\dx,0+\dy) node[TREAD]{}
+	(7.2+\dx,0+\dy) node[TREAD]{}
+	(7.5+\dx,0+\dy) node[TREAD]{}
+	(7.8+\dx,0+\dy) node[TREAD]{};
+	\draw
+	(5.2+\dx,0+\dy) node[NREAD]{}
+	(5.5+\dx,0+\dy) node[NREAD]{}
+	(5.8+\dx,0+\dy) node[NREAD]{}
+	(6.1+\dx,0+\dy) node[NREAD]{}
+	(7.0+\dx,0+\dy) node[NREAD]{}
+	(7.3+\dx,0+\dy) node[NREAD]{}
+	(7.6+\dx,0+\dy) node[NREAD]{}
+	(7.9+\dx,0+\dy) node[NREAD]{};
+}
+\newcommand{\drawBAMTWO}[2]{%
+	\pgfmathsetmacro{\dx}{#1}
+	\pgfmathsetmacro{\dy}{#2}
+	\draw [CHROM] (0+\dx,0+\dy)-- (8+\dx,0+\dy);
+	\draw
+	(0.1+\dx,0+\dy) node[TREAD]{}
+	(0.6+\dx,0+\dy) node[TREAD]{}
+	(1.1+\dx,0+\dy) node[TREAD]{}
+	(1.5+\dx,0+\dy) node[TREAD]{}
+	(1.8+\dx,0+\dy) node[TREAD]{};
+	\draw
+	(0.2+\dx,0+\dy) node[NREAD]{}
+	(0.7+\dx,0+\dy) node[NREAD]{}
+	(1.3+\dx,0+\dy) node[NREAD]{}
+	(1.6+\dx,0+\dy) node[NREAD]{}
+	(1.9+\dx,0+\dy) node[NREAD]{};
+	\draw
+	(2.0+\dx,0+\dy) node[TREAD]{}
+	(2.1+\dx,0+\dy) node[TREAD]{}
+	(2.2+\dx,0+\dy) node[TREAD]{}
+	(2.3+\dx,0+\dy) node[TREAD]{}
+	(2.4+\dx,0+\dy) node[TREAD]{}
+	(2.5+\dx,0+\dy) node[TREAD]{}
+	(2.6+\dx,0+\dy) node[TREAD]{}
+	(2.7+\dx,0+\dy) node[TREAD]{}
+	(2.8+\dx,0+\dy) node[TREAD]{}
+	(2.9+\dx,0+\dy) node[TREAD]{};
+	\draw
+	(2.5+\dx,0+\dy) node[NREAD]{};
+	\draw
+	(3.5+\dx,0+\dy) node[TREAD]{};
+	\draw
+	(3.1+\dx,0+\dy) node[NREAD]{}
+	(3.3+\dx,0+\dy) node[NREAD]{}
+	(3.5+\dx,0+\dy) node[NREAD]{}
+	(3.7+\dx,0+\dy) node[NREAD]{}
+	(3.9+\dx,0+\dy) node[NREAD]{}
+	(4.3+\dx,0+\dy) node[NREAD]{}
+	(4.6+\dx,0+\dy) node[NREAD]{}
+	(4.8+\dx,0+\dy) node[NREAD]{};
+	\draw
+	(5.1+\dx,0+\dy) node[TREAD]{}
+	(5.4+\dx,0+\dy) node[TREAD]{}
+	(5.7+\dx,0+\dy) node[TREAD]{}
+	(6.0+\dx,0+\dy) node[TREAD]{}
+	(6.3+\dx,0+\dy) node[TREAD]{}
+	(6.6+\dx,0+\dy) node[TREAD]{}
+	(6.9+\dx,0+\dy) node[TREAD]{}
+	(7.2+\dx,0+\dy) node[TREAD]{}
+	(7.5+\dx,0+\dy) node[TREAD]{}
+	(7.8+\dx,0+\dy) node[TREAD]{};
+	\draw
+	(5.2+\dx,0+\dy) node[NREAD]{}
+	(5.5+\dx,0+\dy) node[NREAD]{}
+	(5.8+\dx,0+\dy) node[NREAD]{}
+	(6.1+\dx,0+\dy) node[NREAD]{}
+	(7.0+\dx,0+\dy) node[NREAD]{}
+	(7.3+\dx,0+\dy) node[NREAD]{}
+	(7.6+\dx,0+\dy) node[NREAD]{}
+	(7.9+\dx,0+\dy) node[NREAD]{};
+}
+\newcommand{\drawBAMFILES}{%
+	\drawBAMONE{0}{0};
+	\drawBAMTWO{0}{-1};
+}
+\tikzstyle{TRUEBP}= []
+\tikzstyle{FALSEBP}= [dashed]
+\newcommand{\drawBAMFILESSEGED}{%
+	\drawBAMONE{0}{0};
+	\foreach \bpx in {6.2,6.8}
+	{
+		\draw[TRUEBP] (\bpx, -0.4) -- (\bpx, 0.4);
+	}
+	\foreach \bpx in {0.9,2.8,4.2}
+	{
+		\draw[FALSEBP] (\bpx, -0.4) -- (\bpx, 0.4);
+	}
+	\drawBAMTWO{0}{-1};
+	\foreach \bpx in {2.0,3.0,5.0,6.2,6.8}
+	{
+		\draw[TRUEBP] (\bpx, -1.4) -- (\bpx, -0.6);
+	}
+	\foreach \bpx in {0.9,3.4,3.6}
+	{
+		\draw[FALSEBP] (\bpx, -1.4) -- (\bpx, -0.6);
+	}
+}
+
+\tikzstyle{nextprocess}= [->,line width=1.5,draw=black!50]
+\tikzstyle{BAMTIMEORDERNODE}= []
+
+\newcommand{\drawBAMFILEORDERED}{%
+	\drawBAMTWO{0}{-1};
+	\foreach \bpx in {2.0,3.0,5.0,6.2,6.8}
+	{
+		\draw[TRUEBP] (\bpx, -1.4) -- (\bpx, -0.6);
+	}
+	\foreach \bpx in {0.9,3.4,3.6}
+	{
+		\draw[FALSEBP] (\bpx, -1.4) -- (\bpx, -0.6);
+	}
+	\draw
+	(0.45,-2) node[BAMTIMEORDERNODE]{$*$}
+	(1.5,-2) node[BAMTIMEORDERNODE]{$*$}
+	(2.5,-2) node[BAMTIMEORDERNODE]{$(t_2,t_3]$}
+	(4.0,-2) node[BAMTIMEORDERNODE]{$(t_1,t_2]$}
+	(5.6,-2) node[BAMTIMEORDERNODE]{$*$}
+	(6.5,-2) node[BAMTIMEORDERNODE]{$(-\infty, t_1]$}
+	(7.5,-2) node[BAMTIMEORDERNODE]{$*$};
+	\draw[dotted] (0.9,-1.5) -- (0.975,-1.6) -- (0.975,-2.5);
+	\draw[dotted] (2.0,-1.5) -- (1.8,-1.6) -- (1.8,-2.5);
+	\draw[dotted] (3.0,-1.5) -- (3.2,-1.6) -- (3.2,-2.5);
+	\draw[dotted] (5.0,-1.5) -- (5.2,-1.6) -- (5.2,-2.5);
+	\draw[dotted] (6.2,-1.5) -- (5.8,-1.6) -- (5.8,-2.5);
+	\draw[dotted] (6.8,-1.5) -- (7.2,-1.6) -- (7.2,-2.5);
+}
+
+
+\tikzstyle{BAMTREEMUTA}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=sixcolorone!50,draw=sixcolorone!50]
+\tikzstyle{BAMTREEMUTB}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=sixcolortwo!50,draw=sixcolortwo!50]
+\tikzstyle{BAMTREEMUTC}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=sixcolorthree!50,draw=sixcolorthree!50]
+\tikzstyle{BAMTREEMUTD}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=sixcolorfour!50,draw=sixcolorfour!50]
+
+\newcommand{\drawBAMFILEFPBRM}{%
+	\drawBAMTWO{0}{-1};
+	\foreach \bpx in {2.0,3.0,5.0,6.2,6.8}
+	{
+		\draw[TRUEBP] (\bpx, -1.4) -- (\bpx, -0.6);
+	}
+	\foreach \bpx in {3.4,3.6}
+	{
+		\draw[FALSEBP] (\bpx, -1.4) -- (\bpx, -0.6);
+	}
+	\node[BAMTREEMUTA] (muta) at (2.5,-2) {$\theSeg{s}_{j-1}$};
+	\node[BAMTREEMUTB] (mutb) at (3.7,-2) {$\phantom{_{+}}\theSeg{s}_{j}\phantom{_{1}}$};
+	\node[BAMTREEMUTC] (mutc) at (4.7,-2) {$\theSeg{s}_{j+1}$};
+	\node[BAMTREEMUTD] (mutd) at (6.5,-2) {$\theSeg{s}_{j+2}$};
+	\draw[dotted] (2.0,-1.5) -- (1.8,-1.6) -- (1.8,-2.5);
+	\draw[dotted] (3.0,-1.5) -- (3.2,-1.6) -- (3.2,-2.5);
+	\draw[dotted] (5.0,-1.5) -- (5.2,-1.6) -- (5.2,-2.5);
+	\draw[dotted] (6.2,-1.5) -- (5.8,-1.6) -- (5.8,-2.5);
+	\draw[dotted] (6.8,-1.5) -- (7.2,-1.6) -- (7.2,-2.5);
+	\draw[->] (3.2,-1.5) -- (mutb);
+	\draw[->] (4.3,-1.5) -- (mutb);
+	\draw[->] (3.5,-1.5) -- (mutc);
+}
+
+\tikzstyle{BAMTREESUBPOP}= [draw,circle,minimum size=2.0cm,inner sep=0pt,fill=white]
+\newcommand{\drawBAMTREEONE}{%
+	\node [BAMTREESUBPOP,label=right:A] (subpopa) at(0, 0) {};
+	\node [BAMTREEMUTD] (samuta) at(subpopa.center) {$\theSeg{s}_{j+2}$};
+
+	\node [BAMTREESUBPOP,label=right:B] (subpopb) at (0, -3) {};
+	\node [BAMTREEMUTD] (sbmuta) at ([xshift=-0.45cm,yshift=0.3cm]subpopb.center) {$\theSeg{s}_{j+2}$};
+	\node [BAMTREEMUTC] (sbmutb) at ([xshift=0.45cm,yshift=0.2cm]subpopb.center) {$\theSeg{s}_{j+1}$};
+	\node [BAMTREEMUTB] (sbmutb) at ([xshift=-0.05cm,yshift=-0.35cm]subpopb.center) {$\phantom{_{+}}\theSeg{s}_{j}\phantom{_{1}}$};
+
+	\node [BAMTREESUBPOP,label=right:C] (subpopc) at (0, -6) {};
+	\node [BAMTREEMUTD] (scmuta) at ([xshift=-0.4cm,yshift=0.4cm]subpopc.center) {$\theSeg{s}_{j+2}$};
+	\node [BAMTREEMUTC] (scmutb) at ([xshift=0.4cm,yshift=0.4cm]subpopc.center) {$\theSeg{s}_{j+1}$};
+	\node [BAMTREEMUTB] (scmutb) at ([xshift=-0.4cm,yshift=-0.4cm]subpopc.center) {$\phantom{_{+}}\theSeg{s}_{j}\phantom{_{1}}$};
+	\node [BAMTREEMUTA] (scmutc) at ([xshift=0.4cm,yshift=-0.4cm]subpopc.center) {$\theSeg{s}_{j-1}$};
+
+	\draw[TREESPAWN] (subpopa) -- (subpopb);
+	\draw[TREESPAWN] (subpopb) -- (subpopc);
+}
+\newcommand{\drawBAMTREETWO}{%
+	\node [BAMTREESUBPOP,label=right:A] (subpopa) at(0, 0) {};
+	\node [BAMTREEMUTD] (samuta) at(subpopa.center) {$\theSeg{s}_{j+2}$};
+
+	\node [BAMTREESUBPOP,label=right:B] (subpopb) at (-1.5, -3) {};
+	\node [BAMTREEMUTD] (sbmuta) at ([xshift=-0.45cm,yshift=0.3cm]subpopb.center) {$\theSeg{s}_{j+2}$};
+	\node [BAMTREEMUTC] (sbmutb) at ([xshift=0.45cm,yshift=0.2cm]subpopb.center) {$\theSeg{s}_{j+1}$};
+	\node [BAMTREEMUTB] (sbmutb) at ([xshift=-0.05cm,yshift=-0.35cm]subpopb.center) {$\phantom{_{+}}\theSeg{s}_{j}\phantom{_{1}}$};
+
+	\node [BAMTREESUBPOP,label=right:C] (subpopc) at (1.5, -3) {};
+	\node [BAMTREEMUTD] (scmuta) at ([xshift=-0.3cm,yshift=0.2cm]subpopc.center) {$\theSeg{s}_{j+2}$};
+	\node [BAMTREEMUTA] (scmutc) at ([xshift=0.3cm,yshift=-0.2cm]subpopc.center) {$\theSeg{s}_{j-1}$};
+
+	\draw[TREESPAWN] (subpopa) -- (subpopb);
+	\draw[TREESPAWN] (subpopa) -- (subpopc);
+}
+
+\newcommand{\drawLEGENDONE}{%
+	\draw [CHROM] (0,0)-- (1,0);
+	\draw (0.5,0.2) node[TREAD]{}
+	(0.5,-0.2) node[NREAD]{};
+	\node[align=left] at (3,0) {Tumor read\\ Reference genome\\ Normal read};
+}
+\newcommand{\drawLEGENDTWO}{%
+	\draw [TRUEBP] (0,0)-- (0,0.5);
+	\node[] at (2,0.25) {True breakpoint};
+	\draw [FALSEBP] (0,-0.2)-- (0,-0.7);
+	\node[] at (2,-0.45) {False breakpoint};
+}
+
+
+
+
+
+\tikzstyle{TREEMUTA}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=fourcolorone!50,draw=fourcolorone!50]
+\tikzstyle{TREEMUTB}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=fourcolortwo!50,draw=fourcolortwo!50]
+\tikzstyle{TREEMUTC}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=fourcolorthree!50,draw=fourcolorthree!50]
+\tikzstyle{TREEMUTD}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=fourcolorfour!50,draw=fourcolorfour!50]
+
+\tikzstyle{TREESUBPOP}= [draw,circle,minimum size=1.3cm,inner sep=0pt,fill=white]
+\tikzstyle{TREESPAWN}= [->,>=latex]
+\tikzstyle{TREETIMELINE}= [->,>=stealth]
+\tikzstyle{TREESAMPLETAKENLINE}= [dashed]
+
+\newcommand{\drawTREEONE}{%
+	\node [TREESUBPOP,label=right:A] (subpopa) at(0, 0) {};
+	\node [TREEMUTA] (samuta) at(subpopa.center) {a};
+
+	\node [TREESUBPOP,label=right:B] (subpopb) at (0, -2) {};
+	\node [TREEMUTA] (sbmuta) at ([xshift=-0.25cm]subpopb.center) {a};
+	\node [TREEMUTB] (sbmutb) at ([xshift=0.25cm]subpopb.center) {b};
+
+	\node [TREESUBPOP,label=right:C] (subpopc) at (-1, -4) {};
+	\node [TREEMUTA] (scmuta) at ([xshift=-0.25cm,yshift=0.25cm]subpopc.center) {a};
+	\node [TREEMUTB] (scmutb) at ([xshift=0.25cm,yshift=0.25cm]subpopc.center) {b};
+	\node [TREEMUTC] (scmutc) at ([xshift=-0.25cm,yshift=-0.25cm]subpopc.center) {c};
+
+	\node [TREESUBPOP,label=right:D] (subpopd) at (1, -4) {};
+	\node [TREEMUTA] (sdmuta) at ([xshift=-0.25cm,yshift=0.25cm]subpopd.center) {a};
+	\node [TREEMUTB] (sdmutb) at ([xshift=0.25cm,yshift=0.25cm]subpopd.center) {b};
+	\node [TREEMUTD] (sdmutd) at ([xshift=0.25cm,yshift=-0.25cm]subpopd.center) {d};
+
+	\draw[TREESPAWN] (subpopa) -- (subpopb);
+	\draw[TREESPAWN] (subpopb) -- (subpopc);
+	\draw[TREESPAWN] (subpopb) -- (subpopd);
+}
+
+\newcommand{\drawTREETWO}{%
+	\node [TREESUBPOP,label=right:A] (subpopa) at(0, 0) {};
+	\node [TREEMUTA] (samuta) at(subpopa.center) {a};
+
+	\node [TREESUBPOP,label=right:B] (subpopb) at (0, -2) {};
+	\node [TREEMUTA] (sbmuta) at ([xshift=-0.25cm]subpopb.center) {a};
+	\node [TREEMUTB] (sbmutb) at ([xshift=0.25cm]subpopb.center) {b};
+
+	\node [TREESUBPOP,label=right:C] (subpopc) at (0, -4) {};
+	\node [TREEMUTA] (scmuta) at ([xshift=-0.25cm,yshift=0.25cm]subpopc.center) {a};
+	\node [TREEMUTB] (scmutb) at ([xshift=0.25cm,yshift=0.25cm]subpopc.center) {b};
+	\node [TREEMUTC] (scmutc) at ([xshift=-0.25cm,yshift=-0.25cm]subpopc.center) {c};
+
+	\node [TREESUBPOP,label=right:D] (subpopd) at (0, -6) {};
+	\node [TREEMUTA] (sdmuta) at ([xshift=-0.25cm,yshift=0.25cm]subpopd.center) {a};
+	\node [TREEMUTB] (sdmutb) at ([xshift=0.25cm,yshift=0.25cm]subpopd.center) {b};
+	\node [TREEMUTC] (sdmutc) at ([xshift=-0.25cm,yshift=-0.25cm]subpopd.center) {c};
+	\node [TREEMUTD] (sdmutd) at ([xshift=0.25cm,yshift=-0.25cm]subpopd.center) {d};
+
+	\draw[TREESPAWN] (subpopa) -- (subpopb);
+	\draw[TREESPAWN] (subpopb) -- (subpopc);
+	\draw[TREESPAWN] (subpopc) -- (subpopd);
+}
+
+\newcommand{\drawSUBCLONALPOPCONFIGONE}{%
+	\node [text width=4cm] at(-0.5, 1.5) {Subclonal population Frequency};
+	\node  at(-1.5, 0) {100\%};
+	\node [TREEMUTA] (samuta) at(0,0) {a};
+
+	\node  at(-1.5, -1) {80\%};
+	\node [TREEMUTB] (sbmutb) at (0, -1) {b};
+
+	\node  at(-1.5, -2) {50\%};
+	\node [TREEMUTC] (scmutc) at (0, -2) {c};
+
+	\node  at(-1.5, -3) {30\%};
+	\node [TREEMUTD] (sdmutd) at (0, -3) {d};
+
+}
+\newcommand{\drawSUBPOPCONFIGONE}{%
+	\node [text width=2cm] at(-0.5, 1.5) {Subpopulation Frequency};
+	\node  at(-1.5, 0) {20\%};
+	\node [TREESUBPOP,label=right:A] (subpopa) at(0, 0) {};
+	\node [TREEMUTA] (samuta) at(subpopa.center) {a};
+
+	\node  at(-1.5, -1.5) {0\%};
+	\node [TREESUBPOP,label=right:B] (subpopb) at (0, -1.5) {};
+	\node [TREEMUTA] (sbmuta) at ([xshift=-0.25cm]subpopb.center) {a};
+	\node [TREEMUTB] (sbmutb) at ([xshift=0.25cm]subpopb.center) {b};
+
+	\node  at(-1.5, -3) {50\%};
+	\node [TREESUBPOP,label=right:C] (subpopc) at (0, -3) {};
+	\node [TREEMUTA] (scmuta) at ([xshift=-0.25cm,yshift=0.25cm]subpopc.center) {a};
+	\node [TREEMUTB] (scmutb) at ([xshift=0.25cm,yshift=0.25cm]subpopc.center) {b};
+	\node [TREEMUTC] (scmutc) at ([xshift=-0.25cm,yshift=-0.25cm]subpopc.center) {c};
+
+	\node  at(-1.5, -4.5) {30\%};
+	\node [TREESUBPOP,label=right:D] (subpopd) at (0, -4.5) {};
+	\node [TREEMUTA] (sdmuta) at ([xshift=-0.25cm,yshift=0.25cm]subpopd.center) {a};
+	\node [TREEMUTB] (sdmutb) at ([xshift=0.25cm,yshift=0.25cm]subpopd.center) {b};
+	\node [TREEMUTD] (sdmutd) at ([xshift=0.25cm,yshift=-0.25cm]subpopd.center) {d};
+
+}
+\newcommand{\drawSUBPOPCONFIGTWO}{%
+	\node [text width=2cm] at(-0.5, 1.5) {Subpopulation Frequency};
+	\node  at(-1.5, 0) {20\%};
+	\node [TREESUBPOP,label=right:A] (subpopa) at(0, 0) {};
+	\node [TREEMUTA] (samuta) at(subpopa.center) {a};
+
+	\node  at(-1.5, -1.5) {30\%};
+	\node [TREESUBPOP,label=right:B] (subpopb) at (0, -1.5) {};
+	\node [TREEMUTA] (sbmuta) at ([xshift=-0.25cm]subpopb.center) {a};
+	\node [TREEMUTB] (sbmutb) at ([xshift=0.25cm]subpopb.center) {b};
+
+	\node  at(-1.5, -3) {20\%};
+	\node [TREESUBPOP,label=right:C] (subpopc) at (0, -3) {};
+	\node [TREEMUTA] (scmuta) at ([xshift=-0.25cm,yshift=0.25cm]subpopc.center) {a};
+	\node [TREEMUTB] (scmutb) at ([xshift=0.25cm,yshift=0.25cm]subpopc.center) {b};
+	\node [TREEMUTC] (scmutc) at ([xshift=-0.25cm,yshift=-0.25cm]subpopc.center) {c};
+
+	\node  at(-1.5, -4.5) {30\%};
+	\node [TREESUBPOP,label=right:D] (subpopd) at (0, -4.5) {};
+	\node [TREEMUTA] (sdmuta) at ([xshift=-0.25cm,yshift=0.25cm]subpopd.center) {a};
+	\node [TREEMUTB] (sdmutb) at ([xshift=0.25cm,yshift=0.25cm]subpopd.center) {b};
+	\node [TREEMUTC] (sdmutc) at ([xshift=-0.25cm,yshift=-0.25cm]subpopd.center) {c};
+	\node [TREEMUTD] (sdmutd) at ([xshift=0.25cm,yshift=-0.25cm]subpopd.center) {d};
+
+}
+\newcommand{\drawTREEEVOLVEONE}{%
+	\draw[fill=fourcolorone!50, draw=fourcolorone!50] (12,0) .. controls (-8,4) and (-8, 8) .. (12, 12)--cycle;
+	\node [TREESUBPOP,label=above:{ A}] (subpopa) at(-3, 6) {};
+	\node [TREEMUTA] (samuta) at(subpopa.center) {a};
+
+	\draw[fill=fourcolortwo!50, draw=fourcolortwo!50] (12,0.5) .. controls (-6,4) and (-6, 8) .. (12, 11.5)--cycle;
+	\node [TREESUBPOP,label=above:{ B}] (subpopb) at (-1.5, 6) {};
+	\node [TREEMUTA] (sbmuta) at ([xshift=-0.25cm]subpopb.center) {a};
+	\node [TREEMUTB] (sbmutb) at ([xshift=0.25cm]subpopb.center) {b};
+
+	\draw[fill=fourcolorthree!50, draw=fourcolorthree!50] (12,0.5) .. controls (-4,3) and (-4, 8) .. (12, 6)--cycle;
+	\node [TREESUBPOP,label=above:{ C}] (subpopc) at (0, 5.8) {};
+	\node [TREEMUTA] (scmuta) at ([xshift=-0.25cm,yshift=0.25cm]subpopc.center) {a};
+	\node [TREEMUTB] (scmutb) at ([xshift=0.25cm,yshift=0.25cm]subpopc.center) {b};
+	\node [TREEMUTC] (scmutc) at ([xshift=-0.25cm,yshift=-0.25cm]subpopc.center) {c};
+
+	\draw[fill=fourcolorfour!50, draw=fourcolorfour!50] (12,6) .. controls (-1,7) and (-1, 9) .. (12, 11.5)--cycle;
+	\node [TREESUBPOP,label=above:{ D}] (subpopd) at (2.5, 7.8) {};
+	\node [TREEMUTA] (sdmuta) at ([xshift=-0.25cm,yshift=0.25cm]subpopd.center) {a};
+	\node [TREEMUTB] (sdmutb) at ([xshift=0.25cm,yshift=0.25cm]subpopd.center) {b};
+	\node [TREEMUTD] (sdmutd) at ([xshift=0.25cm,yshift=-0.25cm]subpopd.center) {d};
+
+	\draw [TREETIMELINE] (-5,-1)-- (-2,-1)node [above] {Time Line} -- (13,-1)node [below] {Tumor sample taken};
+	\draw [TREESAMPLETAKENLINE] (1,12)-- (1,-1) node [below] {$t_1$};
+	\draw [TREESAMPLETAKENLINE] (8,12)-- (8,-1) node [below] {$t_2$};
+}
+
+\newcommand{\drawTREEEVOLVETWO}{%
+	\draw[fill=fourcolorone!50, draw=fourcolorone!50] (12,0) .. controls (-8,4) and (-8, 8) .. (12, 12)--cycle;
+	\node [TREESUBPOP,label=above:{ A}] (subpopa) at(-3, 6) {};
+	\node [TREEMUTA] (samuta) at(subpopa.center) {a};
+
+	\draw[fill=fourcolortwo!50, draw=fourcolortwo!50] (12,0.5) .. controls (-6,4) and (-6, 8) .. (12, 11.5)--cycle;
+	\node [TREESUBPOP,label=above:{ B}] (subpopb) at (-1.5, 6) {};
+	\node [TREEMUTA] (sbmuta) at ([xshift=-0.25cm]subpopb.center) {a};
+	\node [TREEMUTB] (sbmutb) at ([xshift=0.25cm]subpopb.center) {b};
+
+	\draw[fill=fourcolorfour!50, draw=fourcolorfour!50] (12,0.5) .. controls (-4,3) and (-4, 8) .. (12, 6)--cycle;
+	\node [TREESUBPOP,label=above:{ D}] (subpopd) at (0, 5.8) {};
+	\node [TREEMUTA] (sdmuta) at ([xshift=-0.25cm,yshift=0.25cm]subpopd.center) {a};
+	\node [TREEMUTB] (sdmutb) at ([xshift=0.25cm,yshift=0.25cm]subpopd.center) {b};
+	\node [TREEMUTD] (sdmutd) at ([xshift=0.25cm,yshift=-0.25cm]subpopd.center) {d};
+
+	\draw[fill=fourcolorthree!50, draw=fourcolorthree!50] (12,6) .. controls (-1,7) and (-1, 9) .. (12, 11.5)--cycle;
+	\node [TREESUBPOP,label=above:{ C}] (subpopc) at (2.5, 7.8) {};
+	\node [TREEMUTA] (scmuta) at ([xshift=-0.25cm,yshift=0.25cm]subpopc.center) {a};
+	\node [TREEMUTB] (scmutb) at ([xshift=0.25cm,yshift=0.25cm]subpopc.center) {b};
+	\node [TREEMUTC] (scmutc) at ([xshift=-0.25cm,yshift=-0.25cm]subpopc.center) {c};
+
+	\draw [TREETIMELINE] (-5,-1)-- (-2,-1)node [above] {Time Line} -- (13,-1)node [below] {Tumor sample taken};
+	\draw [TREESAMPLETAKENLINE] (1,12)-- (1,-1) node [below] {$t_1$};
+	\draw [TREESAMPLETAKENLINE] (8,12)-- (8,-1) node [below] {$t_2$};
+}
+
+\newcommand{\drawTREEEVOLVETHREE}{%
+	\draw[fill=fourcolorone!50, draw=fourcolorone!50] (12,0) .. controls (-8,4) and (-8, 8) .. (12, 12)--cycle;
+	\node [TREESUBPOP,label=above:{ A}] (subpopa) at(-3, 6) {};
+	\node [TREEMUTA] (samuta) at(subpopa.center) {a};
+
+	\draw[fill=fourcolortwo!50, draw=fourcolortwo!50] (12,0.5) .. controls (-6,4) and (-6, 8) .. (12, 11.5)--cycle;
+	\node [TREESUBPOP,label=above:{ B}] (subpopb) at (-1.5, 6) {};
+	\node [TREEMUTA] (sbmuta) at ([xshift=-0.25cm]subpopb.center) {a};
+	\node [TREEMUTB] (sbmutb) at ([xshift=0.25cm]subpopb.center) {b};
+
+	\draw[fill=fourcolorthree!50, draw=fourcolorthree!50] (12,0.5) .. controls (-4,4) and (-4, 8) .. (12, 11.5)--cycle;
+	\node [TREESUBPOP,label=above:{ C}] (subpopc) at (0, 6) {};
+	\node [TREEMUTA] (scmuta) at ([xshift=-0.25cm,yshift=0.25cm]subpopc.center) {a};
+	\node [TREEMUTB] (scmutb) at ([xshift=0.25cm,yshift=0.25cm]subpopc.center) {b};
+	\node [TREEMUTC] (scmutc) at ([xshift=-0.25cm,yshift=-0.25cm]subpopc.center) {c};
+
+	\draw[fill=fourcolorfour!50, draw=fourcolorfour!50] (12,0.5) .. controls (0,3) and (0, 9) .. (12, 11.5)--cycle;
+	\node [TREESUBPOP,label=above:{ D}] (subpopd) at (3.2, 6) {};
+	\node [TREEMUTA] (sdmuta) at ([xshift=-0.25cm,yshift=0.25cm]subpopd.center) {a};
+	\node [TREEMUTB] (sdmutb) at ([xshift=0.25cm,yshift=0.25cm]subpopd.center) {b};
+	\node [TREEMUTC] (sdmutc) at ([xshift=-0.25cm,yshift=-0.25cm]subpopd.center) {c};
+	\node [TREEMUTD] (sdmutd) at ([xshift=0.25cm,yshift=-0.25cm]subpopd.center) {d};
+
+	\draw [TREETIMELINE] (-5,-1)-- (-2,-1)node [above] {Time Line} -- (13,-1)node [below] {Tumor sample taken};
+	\draw [TREESAMPLETAKENLINE] (1,12)-- (1,-1) node [below] {$t_1$};
+	\draw [TREESAMPLETAKENLINE] (8,12)-- (8,-1) node [below] {$t_2$};
+}
+
+\tikzstyle{TWOMUTA}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=twocolorone!50,draw=twocolorone!50]
+\tikzstyle{TWOMUTB}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=twocolortwo!50,draw=twocolortwo!50]
+
+\tikzstyle{twoTWOMUTA}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=twocolorone!50,draw=twocolorone!50]
+\tikzstyle{twoTWOMUTB}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=twocolortwo!50,draw=twocolortwo!50]
+\tikzstyle{fourTWOMUTA}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=fourcolorone!50,draw=fourcolorone!50]
+\tikzstyle{fourTWOMUTB}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=fourcolortwo!50,draw=fourcolortwo!50]
+\tikzstyle{fourTWOMUTC}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=fourcolorthree!50,draw=fourcolorthree!50]
+\tikzstyle{fourTWOMUTD}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=fourcolorfour!50,draw=fourcolorfour!50]
+
+
+\tikzstyle{sixPARTIALMUTA}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=sixcolorone!50,draw=sixcolorone!50]
+\tikzstyle{sixPARTIALMUTB}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=sixcolortwo!50,draw=sixcolortwo!50]
+\tikzstyle{sixPARTIALMUTC}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=sixcolorthree!50,draw=sixcolorthree!50]
+\tikzstyle{sixPARTIALMUTD}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=sixcolorfour!50,draw=sixcolorfour!50]
+\tikzstyle{sixPARTIALMUTE}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=sixcolorfive!50,draw=sixcolorfive!50]
+\tikzstyle{sixPARTIALMUTF}= [draw,diamond,minimum size=0.5cm,inner sep=0pt,fill=sixcolorsix!50,draw=sixcolorsix!50]
+
+
+\tikzstyle{PARTIALTREESUBPOP}= [draw,circle,minimum size=0.6cm,inner sep=0pt,fill=white]
+\newcommand{\drawPARTIALTREEOne}{%
+	\node [PARTIALTREESUBPOP,label=below:{},label=right:{0.8}] (subpopa) at(0, 0) {};
+	\node [sixPARTIALMUTA] (samuta) at(subpopa.center) {a};
+	%\node [PARTIALTREESUBPOP,label=below:{2},label=right:{0.3}] (subpopb) at (-1, -1) {};
+	%\node [sixPARTIALMUTB]  at (subpopb.center) {b};
+	%\draw[TREESPAWN] (subpopa) -- (subpopb);
+}
+\newcommand{\drawPARTIALTREETwo}{%
+	\node [PARTIALTREESUBPOP,label=below:{},label=right:{0.4}] (subpopa) at(0, 0) {};
+	\node [sixPARTIALMUTA] (samuta) at(subpopa.center) {a};
+	\node [PARTIALTREESUBPOP,label=below:{},label=right:{0.3}] (subpopb) at (-1, -1) {};
+	\node [sixPARTIALMUTB]  at (subpopb.center) {b};
+	\node [PARTIALTREESUBPOP,label=below:{},label=right:{0.2}] (subpopc) at (-2, -2) {};
+	\node [sixPARTIALMUTC]  at (subpopc.center) {c};
+	\draw[TREESPAWN] (subpopa) -- (subpopb);
+	\draw[TREESPAWN] (subpopb) -- (subpopc);
+}
+\newcommand{\drawPARTIALTREEThree}{%
+	\node [PARTIALTREESUBPOP,label=below:{},label=right:{0.1}] (subpopa) at(0, 0) {};
+	\node [sixPARTIALMUTA] (samuta) at(subpopa.center) {a};
+	\node [PARTIALTREESUBPOP,label=below:{},label=right:{0.3}] (subpopb) at (-1, -1) {};
+	\node [sixPARTIALMUTB]  at (subpopb.center) {b};
+	\node [PARTIALTREESUBPOP,label=below:{},label=right:{0.2}] (subpopc) at (-2, -2) {};
+	\node [sixPARTIALMUTC]  at (subpopc.center) {c};
+	\node [PARTIALTREESUBPOP,label=below:{},label=right:{0.3}] (subpopd) at (1, -1) {};
+	\node [sixPARTIALMUTD]  at (subpopd.center) {d};
+	\draw[TREESPAWN] (subpopa) -- (subpopb);
+	\draw[TREESPAWN] (subpopb) -- (subpopc);
+	\draw[TREESPAWN] (subpopa) -- (subpopd);
+}
+\newcommand{\drawPARTIALTREEFour}{%
+	\node [PARTIALTREESUBPOP,label=below:{},label=right:{0.15}] (subpopa) at(0, 0) {};
+	\node [sixPARTIALMUTA] (samuta) at(subpopa.center) {a};
+	\node [PARTIALTREESUBPOP,label=below:{},label=right:{0.2}] (subpopb) at (-1, -1) {};
+	\node [sixPARTIALMUTB]  at (subpopb.center) {b};
+	\node [PARTIALTREESUBPOP,label=below:{},label=right:{0.1}] (subpopc) at (-2, -2) {};
+	\node [sixPARTIALMUTC]  at (subpopc.center) {c};
+	\node [PARTIALTREESUBPOP,label=below:{},label=right:{0.1}] (subpopd) at (1, -1) {};
+	\node [sixPARTIALMUTD]  at (subpopd.center) {d};
+	\node [PARTIALTREESUBPOP,label=below:{},label=right:{0.3}] (subpope) at (0, -2) {};
+	\node [sixPARTIALMUTE]  at (subpope.center) {e};
+	\node [PARTIALTREESUBPOP,label=below:{},label=right:{0.1}] (subpopf) at (2, -2) {};
+	\node [sixPARTIALMUTF]  at (subpopf.center) {f};
+	\draw[TREESPAWN] (subpopa) -- (subpopb);
+	\draw[TREESPAWN] (subpopb) -- (subpopc);
+	\draw[TREESPAWN] (subpopa) -- (subpopd);
+	\draw[TREESPAWN] (subpopd) -- (subpope);
+	\draw[TREESPAWN] (subpopd) -- (subpopf);
+}
+
+
+\tikzstyle{borderStyle}= [-,draw=gray,thick]
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                         Customize structure                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%设定目录
+\AtBeginSection[]%自动加入目录
+{
+\begin{frame}<beamer>
+\frametitle{目录}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+\setbeamertemplate{enumerate item}[square]
+\setbeamertemplate{enumerate subitem}[circle]
+
+\setbeamertemplate{section in toc}[sections numbered]
+% \setbeamertemplate{section in toc}{\leavevmode\leftskip=1.75ex%
+%   \llap{%
+%     \hskip-2.25ex%
+%     \hfil 第\inserttocsectionnumber 章\hfil}%
+%   \kern1.25ex\inserttocsection\par}
+
+
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\defbeamertemplate{subsection page}{mine}[1][]{%
+    {\usebeamerfont{subsection name}\usebeamercolor[fg]{subsection name}#1}
+    %\vskip1em\par
+%{\color{structure.fg}\usebeamerfont{subsection title}\small\noindent\tikz[baseline,inner sep=5pt] \node[anchor=base] (n1) {\thesection};.~\insertsection}
+%\vspace{-1em}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{part title}
+  \begin{centering}
+      \usebeamerfont{subsection title}\tikz[baseline,inner sep=5pt] \node[anchor=base] (n2) {\thesection.\thesubsection};.~\insertsubsection\par
+  \end{centering}
+    \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}[mine]
+\AtBeginSubsection{\frame{\subsectionpage}}%自动加入标题页面
+
+%引用文献高亮
+\makeatletter
+\let\@mycite\@cite
+\def\@cite#1#2{{\hypersetup{linkcolor=blue!60!black}[{#1\if@tempswa , #2\fi}]}}
+\makeatother
+
+%中文图、表
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\setbeamertemplate{caption}[numbered] %图表编号
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                           Math definition                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand{\theVector}[1]{{\bm{#1}}}
+\newcommand{\theMatrix}[1]{\mathcal{#1}}
+\newcommand{\theSet}[1]{\mathbb{#1}}
+\newcommand{\theSpace}[1]{\textgoth{#1}}
+\newcommand{\theSeg}[1]{\text{#1}}
+\newcommand{\theDist}[1]{\mathsf{#1}}
+\newcommand{\theRange}[1]{\theSet{#1}}
+
+\newcommand{\theDirected}[1]{{\overrightarrow{#1}}}
+\newcommand{\theUndirected}[1]{{\overline{#1}}}
+
+\newcommand{\theNetwork}[1]{\mathscr{#1}}
+\newcommand{\theNode}[1]{{\text{#1}}}
+\newcommand{\theDirectedEdge}[2]{{\overrightarrow{{#1}{#2}}}}
+\newcommand{\theUndirectedEdge}[2]{{\overline{{#1}{#2}}}}
+\newcommand{\theTree}[1]{\mathfrak{#1}}
+\newcommand{\theSpvalue}[1]{\mathfrak{#1}}
+\newcommand{\theStr}[1]{\mathbf{#1}}
+\newcommand{\theLvalue}[1]{\mathcal{#1}}
+
+\newcommand{\theMut}[1]{\text{#1}}
+
+\newcommand{\obey}{\thicksim}
+\newcommand{\dist}[1]{{\mathrm{#1}}}
+\newcommand{\prob}{{\Pr}}
+
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+\let\oldle\le
+\let\le\leqslant
+\let\oldnle\nle
+\let\nle\nleqslant
+\let\oldge\ge
+\let\ge\geqslant
+\let\noldge\nge
+\let\nge\ngeqslant
+
+\newcommand{\GenomeTree}[1]{\mathfrak{#1}}
+\newcommand{\GenomeNode}[1]{\mathcal{#1}}
+\newcommand{\theClass}[1]{\mathbb{#1}}
+
+\newcommand{\GenomeRange}[1]{\bm{#1}}
+\newcommand{\SNVPool}[1]{\mathbb{#1}}
+\newcommand{\SVPool}[1]{\mathbb{#1}}
+\newcommand{\BreakPointPool}[1]{\mathbb{#1}}
+\newcommand{\String}[1]{{#1}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        TIKZ PLOT DEFINITION                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                           Custom command                            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
+
+\newcommand{\highlight}[1]{{\color{red}\CJKfamily{siyuan}\textbf{#1}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand{\point}[1]{{\heiti{\usebeamercolor[fg]{structure}#1}}} %定义高亮文本
+\newcommand{\pointred}[1]{{\heiti{\color{threecolorone}#1}}} %定义高亮文本
+\newcommand{\pointblue}[1]{{\heiti{\color{threecolorthree}#1}}} %定义高亮文本
+\newcommand{\pointgreen}[1]{{\heiti{\color{threecolortwo}#1}}} %定义高亮文本
+
+\newcommand{\bcite}[1]{\textbf{\textcolor{structure.fg}{\textsuperscript{[}\footfullcite{#1}\textsuperscript{]}}}}
+\newcommand{\bwcite}[1]{\textbf{\textcolor{white}{\textsuperscript{[}\footfullcite{#1}\textsuperscript{]}}}}
+
+\newcommand\Wider[2][3em]{%
+\makebox[\linewidth][c]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  \raggedright#2
+  \end{minipage}%
+  }%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                             Title page                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title[统一理论]{万有引力与电磁力的统一理论} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{\Large 张三{\small \\ 20190000}} % Your name
+% \institute[计算机学院]{\large 哈工大 计算机学院}
+\date{\songti 导师：李四教授\\ 专业：计算机应用技术\\ {\small 哈工大计算机学院}\\
+  {\small \today}} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\note{
+  \point{自我介绍、研究方向（博士论文题目）}
+}
+\end{frame}
+
+\begin{frame}
+\vspace*{12em}
+\begin{itemize}
+  \item  \tiny{本作品采用知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议进行许可。要查看该许可协议，可访问 \url{http://creativecommons.org/licenses/by-nc-sa/3.0/cn/}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{目录}
+\tableofcontents
+\note{这是目录提示}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+%------------------------------------------------
+\section{文字部分} 
+
+\subsection{中英文混合排版}
+\begin{frame}
+\frametitle{Paragraphs of Text}
+中英文混合排版，中英文混合排版，中英文混合排版，中英文混合排版，中英文混合排版，中英文混合排版，中英文混合排版，中英文混合排版，中英文混合排版，\point{中英文混合排版}，Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Bullet Points}
+\begin{itemize}
+\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
+\item Aliquam blandit \tikz[baseline,inner sep=0] \node[anchor=base] (n1) {paths};faucibus nisi, sit amet dapibus enim tempus eu
+\item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
+\item Nam cursus est eget velit posuere pellentesque
+\item Vestibulum faucibus velit a augue condimentum quis \tikz[baseline,inner sep=0] \node[anchor=base] (n2) {convallis };nulla gravida
+\end{itemize}
+\pause
+\tikz[overlay]\draw[thick,green,->] (n2) -- (n1);
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Blocks of Highlighted Text}
+\begin{block}{普通框}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+\end{block}
+
+\begin{exampleblock}{举例框}
+Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
+\end{exampleblock}
+
+\begin{alertblock}{警告框}
+Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
+\end{alertblock}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Multiple Columns}
+\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+
+\column{.45\textwidth} % Left column and width
+\textbf{Heading}
+\begin{enumerate}[<+->]
+\item Statement
+\item Explanation
+\item Example
+\end{enumerate}
+
+\column{.5\textwidth} % Right column and width
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+
+\end{columns}
+\end{frame}
+
+
+\section{图、表、公式} 
+\subsection{普通插图} %a subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+\begin{frame}
+\frametitle{Figure}
+Uncomment the {code} on this slide to include your own image from the same {directory} as the template .TeX file.
+% \begin{figure}
+% \includegraphics[width=0.2\linewidth]{pic/1.jpg}
+% \caption{example}
+% \end{figure}
+\end{frame}
+
+\subsection{tikz绘图} %a subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+\begin{frame}
+\begin{tikzpicture}[scale=2,cap=round]
+  % Local definitions
+  \def\costhirty{0.8660256}
+
+  % Colors
+  \colorlet{anglecolor}{green!50!black}
+  \colorlet{sincolor}{red}
+  \colorlet{tancolor}{orange!80!black}
+  \colorlet{coscolor}{blue}
+
+  % Styles
+  \tikzstyle{axes}=[]
+  \tikzstyle{important line}=[very thick]
+  \tikzstyle{information text}=[rounded corners,fill=red!10,inner sep=1ex]
+
+  % The graphic
+  \draw[style=help lines,step=0.5cm] (-1.4,-1.4) grid (1.4,1.4);
+
+  \draw (0,0) circle (1cm);
+
+  \begin{scope}[style=axes]
+    \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
+    \draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};
+
+    \foreach \x/\xtext in {-1, -.5/-\frac{1}{2}, 1}
+      \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=black]
+            {$\xtext$};
+
+    \foreach \y/\ytext in {-1, -.5/-\frac{1}{2}, .5/\frac{1}{2}, 1}
+      \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=black]
+            {$\ytext$};
+  \end{scope}
+
+  \filldraw[fill=green!20,draw=anglecolor] (0,0) -- (3mm,0pt) arc(0:30:3mm);
+  \draw (15:2mm) node[anglecolor] {$\alpha$};
+
+  \draw[style=important line,sincolor]
+    (30:1cm) -- node[left=1pt,fill=black] {$\sin \alpha$} +(0,-.5);
+
+  \draw[style=important line,coscolor]
+    (0,0) -- node[below=2pt,fill=black] {$\cos \alpha$} (\costhirty,0);
+
+  \draw[style=important line,tancolor] (1,0) --
+    node [right=1pt,fill=black]
+    {
+      $\displaystyle \tan \alpha \color{black}=
+      \frac{{\color{sincolor}\sin \alpha}}{\color{coscolor}\cos \alpha}$
+    } (intersection of 0,0--30:1cm and 1,0--1,1) coordinate (t);
+
+  \draw (0,0) -- (t);
+
+  \end{tikzpicture}
+  \frametitle{tikz picture sample}
+\end{frame}
+
+\begin{frame}
+\frametitle{手绘图}
+\tikzstyle{every picture}+=[remember picture]
+\[  y =  \tikz[baseline]{\node[fill=blue!50,anchor=base] (t1){$a$};} x +
+\tikz[baseline]{\node[fill=red!50,anchor=base ] (t2){$b$};}
+\]
+\begin{itemize}
+\item \tikz\node [fill=blue!50,draw,circle] (n1) {};\ slope
+\item \tikz\node [fill=red!50,draw,circle] (n2) {};\ y-intercept
+\end{itemize}
+\begin{tikzpicture}[overlay,>=latex]
+\path[blue,->] (n1.north) edge [out= 60, in= 135] (t1.north west);
+\path[red,->] (n2.south) edge [out=-70, in=-110] (t2.south);
+\end{tikzpicture}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\subsection{公式和列表} 
+
+\begin{frame}
+\frametitle{公式说明}
+\begin{equation}
+  \frac{\mathrm{d}\mathbf{\mathrm{x}}(t)}{\mathrm{d}t} = A\mathbf{\mathrm{x}}(t)+ B\mathbf{\mathrm{u}}(t)\text{。}
+\label{eq:control}
+\end{equation}
+
+其中：
+\begin{itemize}
+\item 向量$\mathbf{\mathrm{x}}(t)$表示$N$个在$t$时
+\item $A$表示$N$个度
+\item $\mathbf{\mathrm{u}}$
+\item $B$表示位点
+\end{itemize}
+
+\pause
+\begin{block}{注意}
+这是一个block。
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Table}
+\begin{table}
+\begin{tabular}{l l l}
+\toprule
+\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+\midrule
+Treatment 1 & 0.0003262 & 0.562 \\
+Treatment 2 & 0.0015681 & 0.910 \\
+Treatment 3 & 0.0009271 & 0.296 \\
+\bottomrule
+\end{tabular}
+\caption{Table caption}
+\end{table}
+\end{frame}
+
+\subsection{代码高亮}
+
+\begin{frame}[fragile]
+  \frametitle{代码高亮}
+C代码:
+\begin{minted}[mathescape,
+               linenos,     % displays the line numbers
+               frame=leftline,
+		baselinestretch=0.5]{csharp}
+  /*
+  这里可以显示公式：
+  $\pi=\lim_{n\to\infty}\frac{P_n}{d}$ where $P$ is the perimeter
+  of an $n$-sided regular polygon circumscribing a
+  circle of diameter $d$.
+  */
+  const double pi = 3.1415926535
+\end{minted}
+
+python代码:
+\begin{minted}[mathescape, linenos]{python}
+# Returns $\sum_{i=1}ˆ{n}i$
+# 多样注释格式和缩进，行码
+def sum_from_one_to(n):
+    r = range(1, n + 1)
+    return sum(r)
+\end{minted}
+\end{frame}
+
+\subsection{文献引用举例}
+\begin{frame}
+  \frametitle{宇宙大爆炸的定义}
+$x^2+y^2=z^2$\bcite{bcite1}
+\pause
+\begin{definition}
+  \point{宇宙大爆炸}：$(X_0,Y_0)$当且仅当$\forall \epsilon >0$\bcite{bcite2}。
+\end{definition}
+\end{frame}
+
+
+
+%----------------------------------------
+
+\subsection{左右分栏和图形动画} 
+
+\begin{frame}
+\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+\column{.45\textwidth} % Left column and width
+  \begin{figure}
+    \begin{center}
+    \tikzstyle{linktype1visible}= [visible on=<{4-}>]
+    \tikzstyle{linktype1previsible}= [visible on=<{1-3}>]
+    \tikzstyle{nodetype1visible}= [visible on=<{4-}>]
+    \tikzstyle{nodetype1previsible}= [visible on=<{1-3}>]
+    \tikzstyle{linktype2visible}= [visible on=<{5-}>]
+    \tikzstyle{scalestyle}= [scale=0.7]
+      \begin{tikzpicture}
+	\node[scalestyle, visible on=<{1,2,3,4}>, nodetype1pre] (N-1) at (0, 1) {1};
+	\node[scalestyle, visible on=<{5-}>, nodetype1] (N-1) at (0, 1) {1};
+	\foreach \name/\x in {2/2, 3/3, 4/4, 5/5}
+	{
+	  \node[scalestyle, nodetype1pre, nodetype1previsible] (N-\name) at (0, \x) {$\name$};
+	  \node[scalestyle, nodetype1, nodetype1visible] (N-\name) at (0, \x) {$\name$};
+	}
+	\foreach \name/\x/\y in {6/1/4, 7/2/5, 8/3/4, 9/2/3}
+	{
+	  \node[scalestyle, nodetype1pre, nodetype1previsible] (N-\name) at (\x, \y) {$\name$};
+	  \node[scalestyle, nodetype1, nodetype1visible] (N-\name) at (\x, \y) {$\name$};
+	}
+	\foreach \name/\x/\y in {10/-1/2, 11/-2/2}
+	{
+	  \node[scalestyle, nodetype1pre, nodetype1previsible] (N-\name) at (\x, \y) {$\name$};
+	  \node[scalestyle, nodetype1, nodetype1visible] (N-\name) at (\x, \y) {$\name$};
+	}
+	\foreach \from/\to in {1/2, 2/3, 3/4, 4/5, 6/7, 7/8, 8/9, 9/6}
+	{
+	  \draw[unlinktype1, linktype1previsible] (N-\from) -- (N-\to);
+	}
+	\draw[unlinktype1](N-4) -- (N-6);
+	\draw[unlinktype1](N-2) -- (N-10);
+	\path[unlinktype1] (N-5) edge [loop above] ();
+	\draw[linktype1pre, linktype1previsible] (N-10) .. controls + (up:0.5cm) .. (N-11);
+	\draw[linktype1pre, linktype1previsible] (N-11) .. controls + (down:0.5cm) .. (N-10);
+
+	\foreach \from/\to in {1/2, 2/3, 3/4, 4/5, 6/7, 7/8, 8/9, 9/6}
+	{
+	  \draw[linktype1, linktype1visible] (N-\from) -- (N-\to);
+	}
+	\draw[linktype1, linktype1visible] (N-10) .. controls + (up:0.5cm) .. (N-11);
+	\draw[linktype1, linktype1visible] (N-11) .. controls + (down:0.5cm) .. (N-10);
+	\draw[linktype2, linktype2visible] (0,-1) --  (0,0.7);
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+\column{.45\textwidth} % Left column and width
+ \begin{itemize}
+        \item<1-| alert@1>
+	  第一条说明
+        \item<4-| alert@4>
+	  第二条说明
+        \item<5-| alert@5>
+	  第三条说明
+        \item<8-| alert@8>
+	  第四条说明
+ \end{itemize}
+ \visible<2>{\fadetitle{这是一个透明标题}}
+\end{columns}
+\visible<6>{
+\fadetitle{\(\displaystyle
+  A=\left( 
+    \begin{array}{*{20}{rcccccccccl}}
+      0&0&0&0&0&0&0&0&0&0&0\\
+      a&0&0&0&0&0&0&0&0&0&0\\
+      0&b&0&0&0&0&0&0&0&c&0\\
+    \end{array}
+  \right)
+  \)
+}
+}
+\end{frame}
+%------------------------------------------------
+
+\begin{frame}
+\begin{figure}
+  \begin{center}
+    \tikzstyle{nodetype1visible}= [visible on=<{2-}>]
+    \tikzstyle{nodetype1previsible}= [visible on=<{1}>]
+    \tikzstyle{linktype2visible}= [visible on=<{3-}>]
+    \tikzstyle{linktype1visible}= [visible on=<{2-}>]
+    \tikzstyle{linktype1previsible}= [visible on=<{1}>]
+
+    \begin{minipage}[b]{0.45\linewidth}
+      \begin{tikzpicture}[scale=0.7]
+	%-------------------------------------
+	\node[unnodetype1,label=below left:$x_2$] (x2)  at (0,0) {};
+	\node[unnodetype1,label=above right:$x_1$] (x1)  at (2,1) {};
+	\node[nodetype1pre,nodetype1previsible,label=below right:$x_4$] (x4)  at (2,-1) {};
+	\node[nodetype1,nodetype1visible,label=below right:$x_4$] (x4)  at (2,-1) {};
+	\node[unnodetype1,label=below right:$x_3$] (x3)  at (4,0) {};
+	%-------------------------------------
+	\draw[-latex] (x1) -- (x2);
+	\draw[-latex] (x1) -- (x3);
+	\draw[linktype1pre,linktype1previsible] (x1) -- (x4);
+	\draw[linktype1,linktype1visible] (x1) -- (x4);
+	\draw[linktype2,linktype2visible] (2,3) node [right] {$u_1$} --  (x1);
+	\draw[linktype2,linktype2visible] (4,2) node [right] {$u_3$}-- (x3);
+	\draw[linktype2,linktype2visible] (0,2) node [left] {$u_2$}-- (x2);
+	%-------------------------------------
+    \end{tikzpicture}
+    \end{minipage}
+    \quad
+    \pause
+    \begin{minipage}[b]{0.45\linewidth}
+    \begin{tikzpicture}[scale=0.7]
+	%-------------------------------------
+	\node[nodetype1pre,nodetype1previsible,label=below left:$x_2$] (x2)  at (0,0) {};
+	\node[nodetype1,nodetype1visible,label=below left:$x_2$] (x2)  at (0,0) {};
+	\node[unnodetype1,label=above right:$x_1$] (x1)  at (2,1) {};
+	\node[unnodetype1,label=below left:$x_4$] (x4)  at (2,-1) {};
+	\node[unnodetype1,label=below right:$x_3$] (x3)  at (4,0) {};
+	%-------------------------------------
+	\draw[-latex] (x1) -- (x4);
+	\draw[-latex] (x1) -- (x3);
+	\draw[linktype1pre,linktype1previsible] (x1) -- (x2);
+	\draw[linktype1,linktype1visible] (x1) -- (x2);
+	\draw[linktype2, linktype2visible] (2,3) node [right] {$u_1$} --  (x1);
+	\draw[linktype2, linktype2visible] (4,2) node [right] {$u_3$}-- (x3);
+	\draw[linktype2, linktype2visible] (4,-2) node [right] {$u_4$}-- (x4);
+	%-------------------------------------
+    \end{tikzpicture}
+    \end{minipage}
+    \begin{minipage}[b]{0.45\linewidth}
+      \begin{tikzpicture}[scale=0.7]
+	%-------------------------------------
+	\node[unnodetype1,label=below left:$x_2$] (x2)  at (0,0) {};
+	\node[unnodetype1,label=above right:$x_1$] (x1)  at (2,1) {};
+	\node[unnodetype1,label=below left:$x_4$] (x4)  at (2,-1) {};
+	\node[nodetype1pre,nodetype1previsible,label=below right:$x_3$] (x3)  at (4,0) {};
+	\node[nodetype1,nodetype1visible,label=below right:$x_3$] (x3)  at (4,0) {};
+	%-------------------------------------
+	\draw[-latex] (x1) -- (x2);
+	\draw[-latex] (x1) -- (x4);
+	\draw[linktype1pre, linktype1previsible] (x1) -- (x3);
+	\draw[linktype1, linktype1visible] (x1) -- (x3);
+	\draw[linktype2,linktype2visible] (2,3) node [right] {$u_1$} --  (x1);
+	\draw[linktype2,linktype2visible] (4,-2) node [right] {$u_4$}-- (x4);
+	\draw[linktype2,linktype2visible] (0,2) node [left] {$u_2$}-- (x2);
+	%-------------------------------------
+	\node[unnodetype1,label=right:Original node] at (6.25,2) {};
+	\visible<2->{\node[nodetype1,nodetype1visible,label=right:Matched node] at (6.25,1) {};}
+	\draw[linktype1,linktype1visible] (5, 0) -- (6.5, 0) node [right] {Link type 1};
+	\draw[linktype2,line after snake=2mm, linktype2visible] (5,-1) --(6.5,-1) node [right] {Link type 2};
+    \end{tikzpicture}
+    \end{minipage}
+  \end{center}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\section{思维导图} 
+\begin{frame}
+  \frametitle{思维导图，总结，致谢}
+  \setbeamercovered{invisible}
+\begin{tikzpicture}[scale=0.6, transform shape]
+\bf
+\centering
+  \path[mindmap,concept color=structure.fg,text=white]
+    node[concept] {Beamer模板}
+    [clockwise from=0]
+    child[concept color=green!30!black, visible on=<{2-}>] {
+      node[concept] {tikz作图}
+      [clockwise from=90]
+      child { node[concept] {节点} }
+      child { node[concept] {边} }
+      child { node[concept] {样式定义} }
+      child { node[concept] {样式分配} }
+    }
+    child[concept color=blue!80!black, visible on=<{3-}>] {
+      node[concept] {代码高亮}
+      [clockwise from=-30]
+      child { node[concept] {支持所有代码} }
+      child { node[concept] {支持公式} }
+    }
+    child[concept color=red!70!structure.fg, visible on=<{4-}>] { 
+      node[concept] {文献} 
+      [clockwise from=-30]
+      child { node[concept] {格式多样} }
+      child { node[concept] {引用方便} }
+    }
+    child[concept color=orange!70!structure.fg, visible on=<{5-}>] { 
+      node[concept] {主题} 
+      [clockwise from=-90]
+      child { node[concept] {主题颜色} }
+      child { node[concept] {背景和前景} }
+      child { node[concept] {字体} }
+      child { node[concept] {图形} }
+    };
+\end{tikzpicture}
+\visible<6->{\fadetitle{\Huge{\centerline{谢谢}}}}
+\end{frame}
+
+\end{document}
+
+% Local Variables:
+% TeX-engine: xetex
+% End:

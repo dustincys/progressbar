@@ -1,0 +1,32 @@
+\ProvidesPackage{beamercolorthemeprogressbar}[2007/06/21]
+
+% Beamer theme by Sylvain Bouveret <sylvain[dot]bouveret[aT]cert[DoT]fr>
+% jun. 2007 version 0.32
+%
+% based on the LaTeX-Beamer package :
+% Copyright 2003 by Till Tantau <tantau@users.sourceforge.net>
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Some color definitions...
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usecolortheme{rose}
+
+\definecolor{progressbar@bgblue}{rgb}{0.75,0.75,0.95} % use structure theme to change
+\definecolor{progressbar@fgblue}{rgb}{0.1,0.1,0.9} % use structure theme to change
+
+\setbeamercolor*{palette primary}{fg=progressbar@fgblue,bg=progressbar@bgblue}
+\setbeamercolor*{palette secundary}{fg=progressbar@fgblue,bg=progressbar@bgblue}
+\setbeamercolor*{palette tertiary}{fg=progressbar@fgblue,bg=progressbar@bgblue}
+
+\setbeamercolor{section in head/foot}{parent=palette primary}
+
+\makeatother

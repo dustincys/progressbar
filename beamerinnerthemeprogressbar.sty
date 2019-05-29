@@ -1,0 +1,57 @@
+\ProvidesPackage{beamerinnerthemeprogressbar}[2007/06/21]
+
+
+% Beamer theme by Sylvain Bouveret <sylvain[dot]bouveret[aT]cert[DoT]fr>
+% jun. 2007 version 0.32
+%
+% based on the LaTeX-Beamer package :
+% Copyright 2003 by Till Tantau <tantau@users.sourceforge.net>
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+\RequirePackage{tikz}
+
+\useinnertheme{rounded}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Bibliography...
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\defbeamertemplate*{bibliography item}{progressbar theme}{
+  \begin{tikzpicture}
+    \useasboundingbox (0, 0.2) rectangle (0.5, 0.7);
+    \fill[fill=bg!85!blue] (0, 0.25) rectangle (0.4, 0.5);
+    \shade[bottom color=bg,top color=bg!85!blue] (0, 0) -- (0.3, 0) -- (0.4, 0.12) -- (0.4, 0.3) -- (0, 0.3) -- cycle;
+    \shade[left color=bg,right color=bg!85!blue] (0,0.27) .. controls (0.25,0.25) .. (0.4,0.5) -- (0,0.5) -- cycle;
+    \fill[fill=bg!90!blue] (0,0) rectangle (0.3,0.05);
+    \shade[left color=bg!95!blue,right color=bg!90!blue] (0,0) rectangle (0.05,0.5);
+    \shade[left color=bg,right color=bg!80!black,shading angle=45] (0.3,0) -- (0.3,0.12) -- (0.4,0.12) -- cycle;
+    \draw[draw=fg!35!bg] (0,0) -- (0.3,0) -- (0.4,0.12) -- (0.4,0.5) -- (0,0.5) -- cycle;
+    \draw[draw=fg!35!bg](0.3,0) -- (0.3,0.12) -- (0.4,0.12);
+  \end{tikzpicture}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Frame title...
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\defbeamertemplate*{frametitle}{progressbar theme}{
+  \begin{centering}
+    \textbf{\insertframetitle}
+    \par
+  \end{centering}
+}
+
+
+  
+\mode<all>
+
+%%% Local Variables: 
+%%% TeX-master: "~/texmf/tex/latex/beamer/test/test.tex"
+%%% End: 
